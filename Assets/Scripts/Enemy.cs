@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour {
 
     public void OnDeath() {
         EnemySpawner.killedEnemies++;
-        if (EnemySpawner.killedEnemies >= 25) {
+        if (EnemySpawner.killedEnemies >= EnemySpawner.needToKillEnemies) {
             GameLogic.Instance.Victory();
         }
 

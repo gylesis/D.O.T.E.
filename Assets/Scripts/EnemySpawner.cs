@@ -11,7 +11,9 @@ public class EnemySpawner : MonoBehaviour {
 
     public static List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    public static int killedEnemies = 0;
+    public static int killedEnemies;
+
+    public static int needToKillEnemies = 20;
 
     [SerializeField]
     [Range(0, 3)]
@@ -27,6 +29,7 @@ public class EnemySpawner : MonoBehaviour {
     private void Start() {
         Instance = this;
         spawnedEnemies.Clear();
+        killedEnemies = 0;
     }
 
     private void Update() {

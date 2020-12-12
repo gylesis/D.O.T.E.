@@ -13,8 +13,15 @@ public class GameLogic : MonoBehaviour {
     [SerializeField]
     public GameObject expolionPaticles;
 
+    [SerializeField]
+    private Text _killedEnemies;
+
     private void Start() {
         Instance = this;
+    }
+
+    private void Update() {
+        KilledEnemiesControl();
     }
 
     public static void GameOver() {
@@ -24,6 +31,11 @@ public class GameLogic : MonoBehaviour {
     public void Victory() {
         victorySign.SetActive(true);
     }
+
+    public void KilledEnemiesControl() {
+        _killedEnemies.text = EnemySpawner.killedEnemies + "/" + EnemySpawner.needToKillEnemies;   
+    }
+
 
 
 }
